@@ -1,3 +1,5 @@
+Mengenerate Private key dan Public Key menggunakan Openssl
+
 #buat private key
 openssl genrsa -out private-key.pem 2048
 
