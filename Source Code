@@ -1,0 +1,11 @@
+#buat private key
+openssl genrsa -out private-key.pem 2048
+
+#buat public key
+openssl rsa -in private-key.pem -out public-key.pem
+
+#encrypt file
+openssl pkeyutl -encrypt -in file.txt -out file-enc.txt -inkey public-key.pem -pubin
+
+#decrypt file
+openssl pkeyutl -decrypt -in file-enc.txt -out file-dec.txt -inkey private-key.pem
